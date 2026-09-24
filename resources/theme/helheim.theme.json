@@ -1,0 +1,88 @@
+{
+  "name": "Helheim",
+  "author": "FabioSilva",
+  "dark": true,
+  "parentTheme": "Islands Dark",
+  "colors": {
+    "dark": "#0e0e13",
+    "darker": "#0d0d11",
+    "foreground": "#8a8f9c",
+    "debug": "#000fff"
+  },
+  "ui": {
+    "*": {
+      "background": "dark",
+      "borderColor": "#20202b",
+      "separatorColor": "#20202b"
+    },
+    "ToolBar": {
+      "background": "dark"
+    },
+    "SidePanel": {
+      "background": "#14141A"
+    },
+    "StatusBar.background": "#121217",
+    "MainToolbar": {
+      "background": "#14141A"
+    },
+    "MainMenu": {
+    },
+    "MainWindow": {
+      "background": "#14141a"
+    },
+    "ToolWindow": {
+      "background": "#101015",
+      "borderColor": "dark",
+      "Header.borderColor": "dark",
+      "Header.background": "dark",
+      "HeaderTab.padding": "4px, 10px, 4px, 10px",
+      "HeaderTab.selectedBackground": "#4EC9B011",
+      "HeaderTab.selectedInactiveBackground": "#ff0000",
+      "HeaderTab.hoverBackground": "#20202b",
+      "HeaderTab.hoverInactiveBackground": "#20202b",
+      "HeaderTab.underlineColor": "#4EC9B0FF",
+      "HeaderTab.inactiveUnderlineColor": "#4EC9B000",
+      "HeaderTab.underlinedTabBackground": "#4EC9B011",
+      "HeaderTab.underlinedTabInactiveBackground": "#4EC9B011",
+      "Header.inactiveBackground": "dark",
+      "Stripe.background": "#14141a",
+      "Stripe.separatorColor": "#20202b",
+      "Stripe.borderColor": "#20202b"
+    },
+    "Editor": {
+      "background": "dark"
+    },
+    "DefaultTabs": {
+      "background": "dark"
+    },
+    "EditorTabs": {
+      "background": "dark",
+      "underlinedBorderColor": "#4EC9B011",
+      "inactiveUnderlinedTabBorderColor": "#00000000",
+      "underlinedTabBackground": "#4EC9B011",
+      "underlinedTabForeground": "#4EC9B0FF"
+    },
+    "EditorPane": {
+      "background": "dark"
+    },
+    "Panel": {
+      "background": "dark"
+    },
+    "TabbedPane": {
+      "background": "dark"
+    },
+    "Tree": {
+      "background": "dark",
+      "foreground": "foreground",
+      "selectionBackground": "#121A1D",
+      "selectionForeground": "#4EC9B0FF",
+      "selectionInactiveBackground": "#121A1D"
+    },
+    "Popup": {
+      "background": "dark",
+      "borderColor": "#20202b",
+      "borderWidth": 1
+    },
+    "Island.borderColor": "#20202b00"
+  }
+}

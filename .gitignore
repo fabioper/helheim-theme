@@ -1,0 +1,8 @@
+/out/
+/dist/
+/*.jar
+/*.zip
+.idea
+.DS_Store
+Thumbs.db
+Desktop.ini

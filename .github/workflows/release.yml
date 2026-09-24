@@ -1,0 +1,41 @@
+name: Release theme
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    env:
+      RELEASE_VERSION: 1.0.${{ github.run_number }}
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Check out the pushed commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Package the theme
+        run: |
+          ./scripts/package-theme.ps1 -Version $env:RELEASE_VERSION
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_COMMIT: ${{ github.sha }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          ./scripts/publish-release.ps1 -Version $env:RELEASE_VERSION -Commit $env:RELEASE_COMMIT
