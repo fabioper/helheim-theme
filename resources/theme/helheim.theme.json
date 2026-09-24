@@ -83,6 +83,35 @@
       "borderColor": "#20202b",
       "borderWidth": 1
     },
-    "Island.borderColor": "#20202b00"
+    "Island.borderColor": "#20202b00",
+    "HelpBrowser": {
+      "AiEditor.background": "dark",
+      "titleHighlightForeground": "#4EC9B0",
+      "UserMessage": {
+        "background": "#14141a",
+        "Snippet.border": "#20202b",
+        "Snippet.MoreLines.foreground": "foreground",
+        "Snippet.MoreLines.hoverBackground": "#20202b",
+        "Snippet.MoreLines.hoverForeground": "#4EC9B0"
+      },
+      "HelpBrowserMessage": {
+        "Snippet.border": "#20202b",
+        "Snippet.MoreLines.background": "#14141a",
+        "Snippet.MoreLines.foreground": "foreground",
+        "Snippet.MoreLines.hoverBackground": "#20202b",
+        "Snippet.MoreLines.hoverForeground": "#4EC9B0"
+      }
+    },
+    "AIAssistant": {
+      "Chat.AssistantMessage.inlineCodeBackground": "#14141a",
+      "Chat.UserMessage.inlineCodeBackground": "dark",
+      "Chat.StepCard.Default.background.color": "#14141a",
+      "Chat.StepCard.Default.border.color": "#20202b",
+      "ChatInput.SendPopup.footerBackground": "#14141a",
+      "UserMessage.Snippet.MoreLines.background": "#14141a",
+      "Inlay.Quote.foreground": "foreground",
+      "Inlay.Quote.Line.background": "#20202b",
+      "Inlay.Blockquote.Line": "#4EC9B0"
+    }
   }
 }
