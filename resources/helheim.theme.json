@@ -9,7 +9,7 @@
     "foreground": "#8a8f9c"
   },
   "ui": {
-    "Component.focusColor": "#4EC9B0",
+    "Component.focusColor": "#505061",
     "Component.focusWidth": 1,
     "*": {
       "background": "dark",

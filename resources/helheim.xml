@@ -1,7 +1,7 @@
 <scheme name="Helheim" version="142" parent_scheme="Darcula">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="ide">WebStorm</property>
+    <property name="ide">idea</property>
     <property name="ideVersion">2026.2.3.0.0</property>
     <property name="originalScheme">Helheim</property>
   </metaInfo>
@@ -11,11 +11,12 @@
   <colors>
     <option name="ADDED_LINES_COLOR" value="29421F" />
     <option name="ANNOTATIONS_COLOR" value="909090" />
-    <option name="BLOCK_TERMINAL_DEFAULT_BACKGROUND" value="12151A" />
+    <option name="BLOCK_TERMINAL_DEFAULT_BACKGROUND" value="14141B" />
+    <option name="BLOCK_TERMINAL_DEFAULT_FOREGROUND" value="C0C3CC" />
     <option name="BORDER_LINES_COLOR" value="282828" />
     <option name="CARET_COLOR" value="BA3C97" />
     <option name="CARET_ROW_COLOR" value="" />
-    <option name="CONSOLE_BACKGROUND_KEY" value="0E0E13" />
+    <option name="CONSOLE_BACKGROUND_KEY" value="14141B" />
     <option name="DELETED_LINES_COLOR" value="BF3428" />
     <option name="DIFF_SEPARATORS_BACKGROUND" value="686868" />
     <option name="DOCUMENTATION_COLOR" value="181A1F" />
@@ -105,7 +106,7 @@
     <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="493927" />
   </colors>
   <attributes>
-    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="" />
+    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
     <option name="BAD_CHARACTER">
       <value>
         <option name="EFFECT_COLOR" value="ff5647" />
@@ -2050,7 +2051,7 @@
         <option name="EFFECT_COLOR" value="612722" />
       </value>
     </option>
-    <option name="VELOCITY_KEYWORD" baseAttributes="" />
+    <option name="VELOCITY_KEYWORD" baseAttributes="DEFAULT_KEYWORD" />
     <option name="WARNING_ATTRIBUTES">
       <value>
         <option name="EFFECT_COLOR" value="ffe06e" />
@@ -2109,7 +2110,7 @@
         <option name="FOREGROUND" value="f7768e" />
       </value>
     </option>
-    <option name="XPATH.KEYWORD" baseAttributes="" />
+    <option name="XPATH.KEYWORD" baseAttributes="DEFAULT_KEYWORD" />
     <option name="YAML_COMMENT">
       <value>
         <option name="FOREGROUND" value="85c46c" />
