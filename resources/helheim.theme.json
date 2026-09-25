@@ -6,12 +6,11 @@
   "editorScheme": "Helheim",
   "colors": {
     "dark": "#0e0e13",
-    "darker": "#0d0d11",
-    "foreground": "#8a8f9c",
-    "debug": "#000fff"
+    "foreground": "#8a8f9c"
   },
   "ui": {
     "Component.focusColor": "#4EC9B0",
+    "Component.focusWidth": 1,
     "*": {
       "background": "dark",
       "borderColor": "#20202b",
@@ -106,6 +105,7 @@
       }
     },
     "AIAssistant": {
+      "ChatInput.background": "#14141B",
       "Chat.AssistantMessage.inlineCodeBackground": "#14141a",
       "Chat.UserMessage.inlineCodeBackground": "dark",
       "Chat.StepCard.Default.background.color": "#14141a",
