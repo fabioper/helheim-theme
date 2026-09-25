@@ -11,6 +11,7 @@
     "debug": "#000fff"
   },
   "ui": {
+    "Component.focusColor": "#4EC9B0",
     "*": {
       "background": "dark",
       "borderColor": "#20202b",
@@ -53,6 +54,7 @@
     "Editor": {
       "background": "#14141B"
     },
+    "TextField.background": "#14141B",
     "DefaultTabs": {
       "background": "dark"
     },
