@@ -9,6 +9,8 @@ cp "$project_root/scripts/"*.sh "$fixture/scripts/"
 cp -R "$project_root/resources" "$fixture/"
 bash "$fixture/scripts/package-theme.sh" --version 1.0.99
 diff -r "$project_root/resources" "$fixture/resources"
+unzip -p "$fixture/dist/helheim-1.0.99.jar" theme/helheim.theme.json | jq -e '.editorScheme == "Helheim"' >/dev/null
+[[ $(unzip -p "$fixture/dist/helheim-1.0.99.jar" META-INF/plugin.xml | xmlstarlet sel -t -v '/idea-plugin/extensions/bundledColorScheme[@id="Helheim"]/@path') == /theme/Helheim.xml ]]
 unzip -p "$fixture/dist/helheim-1.0.99.jar" theme/helheim.theme.json | jq -e '.ui.ToolWindow["HeaderTab.padding"] == "4,10,4,10"' >/dev/null
 unzip -p "$fixture/dist/helheim-1.0.99.zip" helheim/lib/helheim-1.0.99.jar | cmp - "$fixture/dist/helheim-1.0.99.jar"
 if bash "$fixture/scripts/package-theme.sh" --version invalid >/dev/null 2>&1; then
@@ -19,6 +21,21 @@ if bash "$fixture/scripts/package-theme.sh" --version 1.0.99 >/dev/null 2>&1; th
   echo 'Missing scheme accepted' >&2; exit 1
 fi
 mv "$stage/Helheim.xml" "$fixture/resources/theme/Helheim.xml"
+
+for scenario in missing_registration mismatched_id mismatched_name; do
+  descriptor="$fixture/resources/META-INF/plugin.xml"
+  case $scenario in
+    missing_registration) xmlstarlet ed -L -d '/idea-plugin/extensions/bundledColorScheme' "$descriptor" ;;
+    mismatched_id) xmlstarlet ed -L -u '/idea-plugin/extensions/bundledColorScheme/@id' -v Other "$descriptor" ;;
+    mismatched_name) xmlstarlet ed -L -u '/scheme/@name' -v Other "$fixture/resources/theme/Helheim.xml" ;;
+  esac
+  if bash "$fixture/scripts/package-theme.sh" --version 1.0.99 > "$stage/output" 2>&1; then
+    echo "Invalid scheme association accepted: $scenario" >&2; exit 1
+  fi
+  cp "$project_root/resources/META-INF/plugin.xml" "$descriptor"
+  cp "$project_root/resources/theme/Helheim.xml" "$fixture/resources/theme/Helheim.xml"
+  printf 'Passed: %s\n' "$scenario"
+done
 
 cat > "$stage/bin/git" <<'MOCK'
 #!/usr/bin/env bash

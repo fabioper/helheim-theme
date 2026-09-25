@@ -3,7 +3,7 @@
   "author": "FabioSilva",
   "dark": true,
   "parentTheme": "Islands Dark",
-  "editorScheme": "/theme/Helheim.xml",
+  "editorScheme": "Helheim",
   "colors": {
     "dark": "#0e0e13",
     "darker": "#0d0d11",

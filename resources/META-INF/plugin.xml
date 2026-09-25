@@ -32,6 +32,7 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <bundledColorScheme id="Helheim" path="/theme/Helheim.xml"/>
         <themeProvider
                 id="96c25cbb-8693-4f98-b501-a7eafed64941"
                 path="/theme/helheim.theme.json"/>
