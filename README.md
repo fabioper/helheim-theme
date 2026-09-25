@@ -14,7 +14,7 @@ O plugin declara compatibilidade a partir do build `251` (2025.1). Para a aparê
 
 ## Publicar um release
 
-Cada push na branch `main` executa a Action **Release theme** e publica um release com o JAR e o ZIP:
+Cada push na branch `main` executa a Action **Release theme** no Ubuntu 24.04, valida os scripts Bash e os pacotes e publica um release com o JAR e o ZIP:
 
 ```sh
 git push origin main
@@ -26,10 +26,22 @@ Reexecutar a mesma execução mantém a versão e substitui os anexos do release
 
 ## Empacotar localmente
 
-Execute no PowerShell:
+Execute no Ubuntu (no Windows, use Ubuntu via WSL). Instale as dependências:
 
-```powershell
-./scripts/package-theme.ps1 -Version 1.0.1
+```bash
+sudo apt-get update
+sudo apt-get install -y zip unzip jq xmlstarlet shellcheck
+bash scripts/package-theme.sh --version 1.0.1
 ```
 
 Os arquivos são gerados em `dist/`. O JAR contém os recursos do plugin; o ZIP contém `helheim/lib/helheim-1.0.1.jar`.
+
+Para validar os scripts e os cenários de publicação sem criar releases reais:
+
+```bash
+for script in scripts/*.sh; do bash -n "$script"; done
+shellcheck scripts/*.sh
+bash scripts/test-release.sh
+```
+
+A publicação usa Git e GitHub CLI (`gh`), disponíveis no runner, com `GH_TOKEN` e `GH_REPO` configurados pelo workflow. Os scripts PowerShell foram substituídos pelos scripts Bash.
