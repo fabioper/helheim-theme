@@ -18,7 +18,19 @@ $descriptor.PreserveWhitespace = $true
 $descriptor.Load((Join-Path $resources 'META-INF/plugin.xml'))
 $descriptor.SelectSingleNode('/idea-plugin/version').InnerText = $Version
 $themePath = $descriptor.SelectSingleNode('/idea-plugin/extensions/themeProvider').GetAttribute('path').TrimStart('/')
-Get-Content -LiteralPath (Join-Path $resources $themePath) -Raw | ConvertFrom-Json | Out-Null
+$theme = Get-Content -LiteralPath (Join-Path $resources $themePath) -Raw | ConvertFrom-Json
+if ([string]::IsNullOrWhiteSpace($theme.editorScheme)) {
+    throw 'The theme must reference an editorScheme resource.'
+}
+$schemePath = Join-Path $resources $theme.editorScheme.TrimStart('/')
+if (-not (Test-Path -LiteralPath $schemePath -PathType Leaf)) {
+    throw "Editor scheme resource not found: $($theme.editorScheme)"
+}
+$scheme = [System.Xml.XmlDocument]::new()
+$scheme.Load($schemePath)
+if ($scheme.DocumentElement.LocalName -ne 'scheme') {
+    throw 'The editor scheme XML must have a scheme root element.'
+}
 
 New-Item -ItemType Directory -Path $output -Force | Out-Null
 $jarPath = Join-Path $output "helheim-$Version.jar"

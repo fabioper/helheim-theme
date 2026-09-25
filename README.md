@@ -8,6 +8,8 @@ Tema escuro para IDEs da JetBrains, baseado em Islands Dark.
 2. Na IDE, abra **Settings → Plugins → engrenagem → Install Plugin from Disk…** e selecione o arquivo baixado, sem descompactar.
 3. Reinicie a IDE se solicitado e selecione **Helheim** em **Settings → Appearance & Behavior → Appearance → Theme**.
 
+Ao selecionar o tema Helheim, seu esquema de cores do editor também é aplicado, sem importar um `.icls` manualmente. O esquema incluído no plugin fica em `resources/theme/Helheim.xml` e preserva as cores e fontes do esquema original.
+
 O plugin declara compatibilidade a partir do build `251` (2025.1). Para a aparência baseada em Islands Dark, use uma IDE que disponibilize esse tema base.
 
 ## Publicar um release

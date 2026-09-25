@@ -3,6 +3,7 @@
   "author": "FabioSilva",
   "dark": true,
   "parentTheme": "Islands Dark",
+  "editorScheme": "/theme/Helheim.xml",
   "colors": {
     "dark": "#0e0e13",
     "darker": "#0d0d11",
@@ -50,7 +51,7 @@
       "Stripe.borderColor": "#20202b"
     },
     "Editor": {
-      "background": "dark"
+      "background": "#14141B"
     },
     "DefaultTabs": {
       "background": "dark"
@@ -85,7 +86,7 @@
     },
     "Island.borderColor": "#20202b00",
     "HelpBrowser": {
-      "AiEditor.background": "dark",
+      "AiEditor.background": "#14141B",
       "titleHighlightForeground": "#4EC9B0",
       "UserMessage": {
         "background": "#14141a",
