@@ -18,7 +18,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <bundledColorScheme id="Helheim"
-                            path="/Helheim.xml"/>
+                            path="/helheim.xml"/>
         <themeProvider
                 id="96c25cbb-8693-4f98-b501-a7eafed64941"
                 path="/helheim.theme.json"/>
