@@ -37,7 +37,7 @@
       "borderColor": "dark",
       "Header.borderColor": "dark",
       "Header.background": "dark",
-      "HeaderTab.padding": "4px, 10px, 4px, 10px",
+      "HeaderTab.padding": "4,10,4,10",
       "HeaderTab.selectedBackground": "#4EC9B011",
       "HeaderTab.selectedInactiveBackground": "#ff0000",
       "HeaderTab.hoverBackground": "#20202b",
