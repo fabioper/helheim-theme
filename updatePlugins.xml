@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin-repository>
+    <category name="UI">
+        <idea-plugin>
+            <id>helheim</id>
+            <name>Helheim</name>
+            <version>1.0.9</version>
+            <vendor url="https://github.com/fabioper">Fábio Silva</vendor>
+            <description><![CDATA[Helheim is a dark theme for JetBrains IDEs.]]></description>
+            <idea-version since-build="251"/>
+            <depends>com.intellij.modules.platform</depends>
+            <download-url>https://github.com/fabioper/helheim-theme/releases/download/v1.0.9/helheim-1.0.9.zip</download-url>
+        </idea-plugin>
+    </category>
+</plugin-repository>

@@ -4,6 +4,22 @@ Tema escuro para IDEs da JetBrains, baseado em Islands Dark.
 
 ## Instalar
 
+### Pelo repositório personalizado
+
+1. Na IDE, abra **Settings → Plugins → engrenagem → Manage Plugin Repositories…**.
+2. Clique em **+** e adicione o endereço RAW do catálogo:
+
+   ```text
+   https://raw.githubusercontent.com/fabioper/helheim-theme/main/updatePlugins.xml
+   ```
+
+3. Confirme as alterações, procure **Helheim** na aba **Marketplace** e instale o plugin.
+4. Reinicie a IDE se solicitado e selecione **Helheim** em **Settings → Appearance & Behavior → Appearance → Theme**.
+
+O endereço só estará disponível após a publicação de `updatePlugins.xml` na branch `main`. O repositório e os anexos dos releases precisam permanecer acessíveis publicamente.
+
+### Pelo arquivo baixado
+
 1. Baixe `helheim-VERSAO.zip` ou `helheim-VERSAO.jar` na página **Releases** do repositório.
 2. Na IDE, abra **Settings → Plugins → engrenagem → Install Plugin from Disk…** e selecione o arquivo baixado, sem descompactar.
 3. Reinicie a IDE se solicitado e selecione **Helheim** em **Settings → Appearance & Behavior → Appearance → Theme**.
@@ -25,6 +41,17 @@ git push origin main
 A versão é `1.0.N`, onde `N` é o número da execução da Action (`github.run_number`). A tag `v1.0.N` é criada no commit exato do push. Essa versão é gravada no `plugin.xml` empacotado, sem alterar o arquivo fonte ou criar commits automáticos. Execuções que falharem podem deixar lacunas na numeração.
 
 Reexecutar a mesma execução mantém a versão e substitui os anexos do release existente. Se a tag já apontar para outro commit, a publicação falha. Pushes próximos têm execuções independentes, sem cancelamento entre elas. Os releases são publicados com `--latest=false`, sem alterar a indicação de release mais recente quando execuções terminam fora de ordem.
+
+### Atualizar o repositório personalizado
+
+O catálogo `updatePlugins.xml` é mantido manualmente: novos releases não aparecem nele automaticamente. Após a publicação de um release:
+
+1. Baixe o ZIP publicado e confira o `META-INF/plugin.xml` dentro do JAR em `helheim/lib/`. Use a versão efetivamente empacotada: a Action pode gerar uma versão diferente da declarada em `resources/META-INF/plugin.xml`.
+2. Atualize **juntos** os campos `version` e `download-url` do catálogo, usando o endereço HTTPS do ZIP daquela versão. Por exemplo, a versão `1.0.9` usa `https://github.com/fabioper/helheim-theme/releases/download/v1.0.9/helheim-1.0.9.zip`. Não use `latest/download`, pois a publicação utiliza `--latest=false`.
+3. Confira se os demais metadados e a compatibilidade correspondem ao descritor do pacote e se o endereço entrega um ZIP válido, não uma página HTML.
+4. Publique o catálogo atualizado na branch `main` para disponibilizá-lo às IDEs cadastradas.
+
+O push dessa atualização também dispara a Action, mas não altera automaticamente a versão anunciada no catálogo.
 
 ## Empacotar localmente
 
