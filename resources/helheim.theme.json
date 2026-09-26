@@ -5,7 +5,7 @@
   "parentTheme": "Islands Dark",
   "editorScheme": "Helheim",
   "colors": {
-    "dark": "#0e0e13",
+    "dark": "#111116",
     "foreground": "#8a8f9c"
   },
   "ui": {
@@ -32,7 +32,7 @@
       "background": "#14141a"
     },
     "ToolWindow": {
-      "background": "#101015",
+      "background": "#111116",
       "borderColor": "dark",
       "Header.borderColor": "dark",
       "Header.background": "dark",
